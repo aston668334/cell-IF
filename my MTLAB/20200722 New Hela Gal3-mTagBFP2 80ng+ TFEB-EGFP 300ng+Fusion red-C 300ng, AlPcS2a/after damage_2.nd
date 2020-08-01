@@ -1,0 +1,21 @@
+"NDInfoFile", Version 2.0
+"Description",  =Multi Dimensions Experiment
+"StartTime1", 20200722 17:13:32
+"DoTimelapse", TRUE
+"NTimePoints", 61
+"DoStage", FALSE
+"DoWave", TRUE
+"NWavelengths", 4
+"WaveName1", "Confocal_640"
+"WaveDoZ1", FALSE
+"WaveName2", "Confocal_561"
+"WaveDoZ2", FALSE
+"WaveName3", "Confocal_488"
+"WaveDoZ3", FALSE
+"WaveName4", "Confocal_405"
+"WaveDoZ4", FALSE
+"WavePointsCollected", 1, 1, 61
+"DoZSeries", FALSE
+"WaveInFileName", TRUE
+"NEvents", 0
+"EndFile"
