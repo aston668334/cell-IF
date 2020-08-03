@@ -1,7 +1,6 @@
 clear;clc;clf; % clear用於清除workspace內的變數,clc用於清除command window中的指令.
-
 [file,path] = uigetfile('*.tif');
-%[mask_file,mask_path] = uigetfile('*.tif');
+[file,path] = uigetfile('*.tif');
 TifFileList = dir([path,'*.tif'])';% 將同一個file內的tif檔建立成一個structure.
 n =length(TifFileList); % n= image number (***自行填入更改)
 
@@ -13,12 +12,11 @@ for j=1:n % n= image number
 data_table = TifFileList;    
  
 % read image
-% figure(1);
+%figure(1);
 A = imread([TifFileList(j).folder,'\',TifFileList(j).name]); % read tif file, n= image number
-% imshow(A);
+imshow(A);
 [m,n] = size(A);
 
-%mask_cell = imread([mask_path,mask_file]);
 mask_cell = ones(m,n);
 
 % figure(2);
