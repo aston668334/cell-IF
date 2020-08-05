@@ -1,7 +1,7 @@
-clear;clc;clf; % clear用於清除workspace內的變數,clc用於清除command window中的指令.
+clear;clc;close all; % clear用於清除workspace內的變數,clc用於清除command window中的指令.
 
-[file,path] = uigetfile('*.tif');
-%[mask_file,mask_path] = uigetfile('*.tif');
+[file,path] = uigetfile({'*.tif','cell photo';'*.*','else file'},'select first photo');
+%[mask_file,mask_path] = uigetfile({'*.tif';'*.*'},'select mask photo';
 TifFileList = dir([path,'*.tif'])';% 將同一個file內的tif檔建立成一個structure.
 n =length(TifFileList); % n= image number (***自行填入更改)
 
@@ -37,10 +37,6 @@ intensity = 0;
 
 intensity = sum(sum(after_mask_image));
 
-%   for i = 1:size(r,1)
-%    intensity = [double(B(r(i,1),c(i,1)))-95] + intensity;
-%   end  
-  
 Intensityovertime=[Intensityovertime;intensity]; %第一張至最後一張圖的intensity
 
 
