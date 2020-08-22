@@ -92,7 +92,7 @@ cytosol_2_blank = cytosol_2_TFEB/cytosol_2_fusionred;
 nuclear_blank = nuclear_TFEB/nuclear_fusionred;
 
 cytosol_1_afterdamage_TFEB_fusionred_ratio = (cyt_1_TFEB_intensity./cyt_1_fusionred_intensity)/cytosol_1_blank;
-cytosol_2_afterdamage_TFEB_fusionred_ratio = (cyt_2_TFEB_intensity./cyt_2_fusionred_intensity)/cyrl_2_blank;
+cytosol_2_afterdamage_TFEB_fusionred_ratio = (cyt_2_TFEB_intensity./cyt_2_fusionred_intensity)/cytosol_2_blank;
 nuclear_afterdamage_TFEB_fusionred_ratio = (nuclear_TFEB_intensity./nuclear_fusionred_intensity)/nuclear_blank;
 
 cytosol_afterdamage_TFEB_fusionred_ratio_adv = (cytosol_1_afterdamage_TFEB_fusionred_ratio+cytosol_2_afterdamage_TFEB_fusionred_ratio)/2;
