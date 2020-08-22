@@ -44,16 +44,16 @@ end
 %%
 
 cyt_1_name = cytosol_1.name;
-cyt_1_fusionred_index = strfind(cyt_1_name,'c002');
-cyt_1_TFEB_index = strfind(cyt_1_name,'c003');
+cyt_1_fusionred_index = strfind(cyt_1_name,'c001');
+cyt_1_TFEB_index = strfind(cyt_1_name,'c002');
     
 cyt_2_name = cytosol_2.name;
-cyt_2_fusionred_index = strfind(cyt_2_name,'c002');
-cyt_2_TFEB_index = strfind(cyt_2_name,'c003');
+cyt_2_fusionred_index = strfind(cyt_2_name,'c001');
+cyt_2_TFEB_index = strfind(cyt_2_name,'c002');
 
 nuclear_name = nuclear.name;
-nuclear_fusionred_index = strfind(nuclear_name,'c002');
-nuclear_TFEB_index = strfind(nuclear_name,'c003');
+nuclear_fusionred_index = strfind(nuclear_name,'c001');
+nuclear_TFEB_index = strfind(nuclear_name,'c002');
 
 cyt_1_fusionred_intensity = [];
 cyt_1_TFEB_intensity = [];
@@ -92,7 +92,7 @@ cytosol_2_blank = cytosol_2_TFEB/cytosol_2_fusionred;
 nuclear_blank = nuclear_TFEB/nuclear_fusionred;
 
 cytosol_1_afterdamage_TFEB_fusionred_ratio = (cyt_1_TFEB_intensity./cyt_1_fusionred_intensity)/cytosol_1_blank;
-cytosol_2_afterdamage_TFEB_fusionred_ratio = (cyt_2_TFEB_intensity./cyt_2_fusionred_intensity)/cyrl_2_blank;
+cytosol_2_afterdamage_TFEB_fusionred_ratio = (cyt_2_TFEB_intensity./cyt_2_fusionred_intensity)/cytosol_2_blank;
 nuclear_afterdamage_TFEB_fusionred_ratio = (nuclear_TFEB_intensity./nuclear_fusionred_intensity)/nuclear_blank;
 
 cytosol_afterdamage_TFEB_fusionred_ratio_adv = (cytosol_1_afterdamage_TFEB_fusionred_ratio+cytosol_2_afterdamage_TFEB_fusionred_ratio)/2;
@@ -114,7 +114,10 @@ nuclear_final   = [-60,nuclear_TFEB,nuclear_fusionred;
 nuclear_final = [num2cell(nuclear_final),['除以-60之後';num2cell(nuclear_afterdamage_TFEB_fusionred_ratio.')]];
 nuclear_table = cell2table(nuclear_final,'VariableNames',{'times' 'TFEB' 'fusion red' 'TFEB/fusion red ratio'});
 
-filename = ['D:\data\TFEB summary\summary_',path(22:27),'_after damage_1.xlsx'];
+p = split(path,'\');
+pa = p(1:end-4);
+pa = string(join(pa,'\'));
+filename = [char(pa),'\summary_',char(p(end-3)),'_after damage_1.xlsx'];
 writetable(cytosol_1_table,filename,'Sheet','cytosol_1')
 writetable(cytosol_2_table,filename,'Sheet','cytosol_2')
 writetable(nuclear_table,filename,'Sheet','nuclear')

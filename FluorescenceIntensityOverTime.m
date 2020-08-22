@@ -31,7 +31,9 @@ mask_cell = ones(m,n);
 % B = imread(TifFileList(j+n).name); % read tif file
 % imshow(B);
 
-after_mask_image = (double(A)- 95*ones(m,n)).*mask_cell;
+%after_mask_image = (double(A)- 95*ones(m,n)).*mask_cell;
+after_mask_image = double(A).*mask_cell;
+
 
 intensity = 0;
 
