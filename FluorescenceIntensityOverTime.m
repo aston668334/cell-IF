@@ -7,7 +7,7 @@ n =length(TifFileList); % n= image number (***自行填入更改)
 
 Intensityovertime=[]; % 整張image的all mito intensity 隨時間的變化
 
-
+%%
 for j=1:n % n= image number
     
 data_table = TifFileList;    
